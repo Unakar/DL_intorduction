@@ -33,7 +33,8 @@ class Baseline_Net(nn.Module):
 def train(model, trainloader, device, criterion, optimizer, epoch_losses):
     model.train()
     log_interval = 100
-    for epoch in range(10): 
+    EPOCH = 10
+    for epoch in range(EPOCH): 
 
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
@@ -109,12 +110,6 @@ def main(model):
     train(model, trainloader, device, criterion, optimizer, epoch_losses)
     test(model, testloader, device)
 
-    # 绘制loss曲线
-    plt.plot(range(len(epoch_losses)), epoch_losses)
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss')
-    plt.title('Training Loss Curve')
-    plt.show()
 
 if __name__ == '__main__':
     model = Baseline_Net()
