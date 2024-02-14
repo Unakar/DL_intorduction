@@ -136,7 +136,7 @@ class BetterBaselineModel(nn.Module): # Better Baseline Model
 class ResNet(nn.Module): # Resnet18
     def __init__(self):
         super().__init__()
-        self.model = torchvision.models.resnet18(pretrained=False)
+        self.model = torchvision.models.resnet18(pretrained=False)#这里改成true会自动下载预训练权重
         if Config.PRETRAINED:
             self.model.load_state_dict(torch.load(Config.RESNET_PRETRAINED_PATH))
             for param in self.model.parameters():
