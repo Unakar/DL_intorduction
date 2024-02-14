@@ -3,3 +3,4 @@ src/cifar10/__pycache__
 cifar_10_model.pth
 cifar_10_final_model.pth
 resnet18-f37072fd.pth
+src/cifar10/compress_demo.py

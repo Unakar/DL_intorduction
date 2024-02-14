@@ -133,7 +133,7 @@ class BetterBaselineModel(nn.Module): # Better Baseline Model
         x = self.fc3(x)
         return x
     
-class ResNet(nn.Module): # Resnet18
+class ResNet(nn.Module): 
     def __init__(self):
         super().__init__()
         self.model = torchvision.models.resnet18(pretrained=False)#这里改成true会自动下载预训练权重
@@ -143,7 +143,6 @@ class ResNet(nn.Module): # Resnet18
                 param.requires_grad = False
         self.model.fc = nn.Linear(512, 10)
         self.model.fc.requires_grad_(True)
-
     def forward(self, x):
         x = self.model(x)
         return x
